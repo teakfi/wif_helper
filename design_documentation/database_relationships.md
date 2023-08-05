@@ -51,28 +51,28 @@ Other attribute holds multiple different informations about the unit. In the cas
 
 * White print (better than regular unit in certain situations)
 * Artillery unit (regular, anti-tank, anti-air, or FLAK) specific information
- * Artillery (regular, anti-tank, or anti-air) unit movement type:
-  * Rail
-  * Towed
-  * Motorized
-  * Self-propelled
- * AT and AA artillery anti-tank capacity type, pink (bonus only in defence) or red (bonus in both attack and defence)
- * AA unit status light (not being able to shoot at high altitude bombers) or heavy
- * Is a regular artillery a rocket artillery
- * Is a FLAK unit Missile or not.
+  * Artillery (regular, anti-tank, or anti-air) unit movement type:
+    * Rail
+    * Towed
+    * Motorized
+    * Self-propelled
+  * AT and AA artillery anti-tank capacity type, pink (bonus only in defence) or red (bonus in both attack and defence)
+  * AA unit status light (not being able to shoot at high altitude bombers) or heavy
+  * Is a regular artillery a rocket artillery
+  * Is a FLAK unit Missile or not.
 * Is the unit
- * elite
- * commando
- * marine  
- * para
- * mountain
- * motorized
- * airlanding
- * SS
- * Guards
- * Siberian
- * NKVD
- * bicycle
+  * elite
+  * commando
+  * marine  
+  * para
+  * mountain
+  * motorized
+  * airlanding
+  * SS
+  * Guards
+  * Siberian
+  * NKVD
+  * bicycle
 
 Simplest modeling style would be to have just a **TRUE/FALSE** bit for each of these in a land unit table, but I'll go for a more future proof design.
 
