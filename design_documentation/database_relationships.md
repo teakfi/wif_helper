@@ -30,7 +30,9 @@ Each numbered option has suboptions which can be chosen to be implemented indivi
 The structure for class, type and type2 attributes is different for land, air (all have class air), and naval units.
 
 **Land\_unit\_type**(_type_, class)
+
 **Air\_unit\_type**(_type_)
+
 **Naval\_unit\_type**(_type2_, type, class)
 
 The attribute year is for most of the units a game year in which the unit becomes available, but some units have special values in it. 
@@ -44,7 +46,9 @@ Special values are:
 All of these units are unscrappable.
 
 **Regular\_units**(_year_,_unitId_)
+
 **CBV\_units**(_city_,_unitId_)
+
 **Special\_entry\_units**(_unitId_, reserve, ge, ge+1, ge+2, cbv)
 
 Other attribute holds multiple different informations about the unit. In the case of land unit it holds following information:
