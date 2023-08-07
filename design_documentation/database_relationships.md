@@ -138,3 +138,28 @@ Unit names will be
 **Air\_unit**(_unitId_, typeId, powerCountry, homeCountry, unit, name, optionId, buildTime, buildCost, ATA, ATS, TAC, RNG, STR, high, atr, para, nf, unarmed, jet, tb, ext, sh, low, 2e, np, xatr, fb, ws, bs, ll_able, ll_unit)
 
 **Naval\_unit**(_unitId_, typeId, powerCountry, homeCountry, shipname, optionId, buildTime, buildCost, buildCost2, cc1, cc2, replaceable, replacement, ll_able, ll_unit, seabox, inf_transport_only, schnorkel, walther, missile, milchcow, ssqValue, att, def, rng, mov, cv, sb, aa, sunkDate, used)
+
+An unit can have one of many statuses.
+
+* removed from game (not included at all)
+* scrapped (removed from useable units during game)
+* in the active force pool (buildable units of a given major power)
+* future addition to the force pools or to the map directly (like minor country units to be set up in the case of war)
+* reserve pool for land units to be set up in the case of a war with major power
+* construction pool of half finished ships
+* repair pool of damaged ships
+* land lease pool, recipient units go here when they arrive to the game and are relased when original unit is put here after being build
+* air reserve pool of air units lacking pilots
+* in the build track, naval units go there twice, first "face down" (fd) and after being built they go to construction pool and from there they are build "face up" and go to game. An option in the game changes the "global" production to city specific.
+* in the game map
+
+A minor country unit will have will have a controlling major power when in game and a naval unit can become captured, thus controlling country has to be set.
+
+**Build\_track**(_unitId_, controlCountry, turnsLeft, fdShip, location)
+
+**Unit\_status**(_unitId_, controlCountry, removed, scrapped, forcePool, reservePool, repairPool, LLPool)
+
+Map will most likely receive updates as the application matures.
+
+**Map**(_unitId_, controlCountry)
+
