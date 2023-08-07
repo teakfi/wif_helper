@@ -161,3 +161,4 @@ cython_debug/
 
 # Some outputs may be in Excel format. Unit data input is in Excel and downloadable elsewhere.
 *.xlsx
+*.bkp
