@@ -113,7 +113,7 @@ Land-lease units cannot be build by the user country, they must be received from
 Carriers have maximum size of aircraft which can be based on the carrier. Carrier aircrafts (CVP) have a corresponding size attribute, which depends of the game year. The size can decrease by one up to twice to minimum size of 1 during specific years.
 
 **CVPSize**(_unitId_, startingSize)
-**CVPSizeDropYear**(_unitId_. dropYear)
+**CVPSizeDropYear**(_unitId_, _dropYear_)
 
 The ship2 attribute in the data holds various information. 
 
@@ -128,16 +128,16 @@ The ship2 attribute in the data holds various information.
 * Submarine having a schnorkel, Walther, missiles, and/or being a milchcow
 * Transport being a service squadron (ssq) and the size of port stacking bonus
 
-**Replacements**(_replacedId_,_replacementId_)
+**Replacements**(_replacedUnitId_,_replacingUnitId_)
 
 For representing convoy capability I decided to give each naval unit convoy cap 1 and 2 (cc1,cc2) representing convoy unit capacity and asw unit capacity. This allows also representation of future special counters with convoy capability.
-Unit names will be 
+Unit names will be given as a single string.
   
 **Land\_unit**(_unitId_, typeId, powerCountry, homeCountry, name, optionId, buildTime, buildCost, strenght, movementspeed, reorgvalue, divSized, WP, railmov, towed, motorized, SP, pink, red,  heavyAA, rocket, missileFLAK, elite, commando, marine, para, mountain, airlanding, SS, guards, Siberian, NKVD, bicycle)
 
-**Air\_unit**(_unitId_, typeId, powerCountry, homeCountry, unit, name, optionId, buildTime, buildCost, ATA, ATS, TAC, RNG, STR, high, atr, para, nf, unarmed, jet, tb, ext, sh, low, 2e, np, xatr, fb, ws, bs, ll_able, ll_unit)
+**Air\_unit**(_unitId_, typeId, powerCountry, homeCountry, unit, name, optionId, buildTime, buildCost, ATA, ATS, TAC, RNG, STR, high, atr, para, nf, unarmed, jet, tb, ext, sh, low, 2e, np, xatr, fb, ws, bs)
 
-**Naval\_unit**(_unitId_, typeId, powerCountry, homeCountry, shipname, optionId, buildTime, buildCost, buildCost2, cc1, cc2, replaceable, replacement, ll_able, ll_unit, seabox, inf_transport_only, schnorkel, walther, missile, milchcow, ssqValue, att, def, rng, mov, cv, sb, aa, sunkDate, used)
+**Naval\_unit**(_unitId_, typeId, powerCountry, homeCountry, shipname, optionId, buildTime, buildCost, buildCost2, cc1, cc2, seabox, inf_transport_only, schnorkel, walther, missile, milchcow, ssqValue, att, def, rng, mov, cv, sb, aa, sunkDate, used)
 
 An unit can have one of many statuses.
 
