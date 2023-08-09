@@ -18,7 +18,7 @@ Required for force pool analysis and build requirements. Most likely to be used 
 
 ## User interface for force pool analysis
 
-* [ ] Deside possible actions
+* [ ] Decide possible actions
 * [ ] Design UI
 * [ ] Test actions
 * [ ] Test UI
