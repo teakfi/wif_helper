@@ -13,7 +13,7 @@ Required for force pool analysis and build requirements. Most likely to be used 
 
 ## Data reading and saving
 
-* [ ] Decide technologies
+* [x] Decide technologies
 * [ ] Design testing
 
 ## User interface for force pool analysis
