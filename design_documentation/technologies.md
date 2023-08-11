@@ -19,17 +19,6 @@ rationale: use experience with pandas, sqlite3 enables sql-based data handling, 
 
 Graphical user interface:
 
-undecided, needs further study and experimentation options:
-
 * pyqt
-* tkinter
-* wxpython
 
-Data presentation:
-
-undecided, may depend on GUI selection, options are:
-
-* matplotlib
-* seaborn
-* bokeh
-* plotly
+rationale: relearning QT from C++ and QTCharts looks promising for displaying data, if it is not enough then reverting to actual data plotting libraries.
