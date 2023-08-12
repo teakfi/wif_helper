@@ -19,4 +19,8 @@ Each of these areas will be handled with seperate modules and will be implemente
 
 The published files will only show information available from freely downloadable material from A-D-G. If other information is required for use of this application the guidance will be published.
 
+Counter data is to be loaded in form of Excel-file from (French World in Flames hobbyist page)[https://sites.google.com/site/frenchwifpage/world-in-flames-wif/world-in-flames-collectors-edition-wif-ce/wif-ce-counters]
 
+## Testing environment
+
+Development testing on finding suitable graphical representation of the data is done with Jupyter lab environment, this requirement will be removed later on from the actual deployment environment.
