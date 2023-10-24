@@ -4,7 +4,9 @@ import sqlite3
 import os
 
 class testDataBaseConnector(unittest.TestCase):
+    """Testing database connector"""
     def setUp(self):
+        """setUp for testing with different ini-files to check correct behaviour"""
         self.connector = DBC.DataBaseConnector()
         filepath = 'unit_testing/testdata/'
         self.noIni = filepath+'nofile'

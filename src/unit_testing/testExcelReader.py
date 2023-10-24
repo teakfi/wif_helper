@@ -3,7 +3,9 @@ import unittest
 import pandas as pd
 
 class testExcelReader(unittest.TestCase):
+    """Unit testing Excel file reader"""
     def setUp(self):
+        """Set up for unit tests with different data files for checking correct behaviour"""
         self.reader = ER.ExcelReader()
         filepath = 'unit_testing/testdata/'
         noFilename = 'notList.xlsx'
