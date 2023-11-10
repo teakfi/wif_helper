@@ -1,6 +1,8 @@
 import force_pool_analysis.ExcelReader as ER
 import unittest
 import pandas as pd
+import databaseconnector.DataBaseConnector as DBC
+import os
 
 class testExcelReader(unittest.TestCase):
     """Unit testing Excel file reader"""
@@ -19,7 +21,7 @@ class testExcelReader(unittest.TestCase):
         self.correctAirDf = filepath+'airDf.pkl'
         self.correctLandDf = filepath + 'landDf.pkl'
         self.correctNavalDf = filepath + 'navalDf.pkl'
-
+        self.dbini = filepath+'correctDB.ini'
 
     def test_wrongFileDoesNotExists(self):
         self.assertRaises(ER.dataFileError, self.reader.openFile,self.noFile)
@@ -52,6 +54,28 @@ class testExcelReader(unittest.TestCase):
         navalEqual = obj.navalUnits.equals(dfCorrectNaval)
 
         self.assertTrue(all([landEqual,airEqual,navalEqual]))
+
+    def test_writeDataToDB(self):
+        data = self.reader.openFile(self.incorrectMeta)
+        connector = DBC.DataBaseConnector()
+        connection = connector.CreateDB('data.db',self.dbini)
+        self.reader.writeUnitsToDB(data, connection)
+        cursor = connection.cursor()
+
+        # check countries
+        correct_countries = ['Argentina','Yugoslavia','Belgium','USA','USSR','Afghanistan','Partisan']
+        query = cursor.execute("SELECT CountryName FROM Country")
+        qresult = query.fetchall()
+        countries = []
+        for results in qresult:
+            countries.append(results[0])
+
+        correct_countries.sort()
+        countries.sort()
+        self.assertListEqual(correct_countries, countries, 'countries not correct')
+
+        if os.path.exists('data.db'):
+            os.remove('data.db')
 
 if __name__ == '__main__':
     unittest.main()

@@ -3,6 +3,8 @@ import openpyxl
 from dataclasses import dataclass
 import pandas as pd
 import datetime
+import sqlite3
+import numpy as np
 
 @dataclass
 class unitData:
@@ -86,3 +88,30 @@ class ExcelReader:
         units.navalUnits=pd.read_excel(wb,sheet_name="Naval", header=3, engine="openpyxl", usecols=self.requiredNavalColumns)
 
         return units
+    
+    def CountriesToDB(self, data:unitData):
+        return
+    
+    def writeUnitsToDB(self, data:unitData, connection:sqlite3.Connection):
+        countries = []
+        countries.extend(data.airUnits["POWER"].unique().tolist())
+        countries.extend(data.airUnits["HOME"].unique().tolist())
+        countries.extend(data.landUnits["POWER"].unique().tolist())
+        countries.extend(data.landUnits["HOME"].unique().tolist())
+        countries.extend(data.navalUnits["POWER"].unique().tolist())
+        countries.extend(data.navalUnits["HOME"].unique().tolist())
+        countries = list(set(countries))
+        if  np.nan in countries:
+            countries.remove(np.nan)
+            countries.append('Partisan')
+        
+        data = []
+        for country in countries:
+            data.append((country,False))
+        
+        cursor = connection.cursor()
+
+        cursor.executemany("INSERT INTO Country VALUES(?,?)",data)
+
+        connection.commit()
+        return
