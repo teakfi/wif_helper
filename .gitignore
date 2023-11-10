@@ -163,3 +163,4 @@ cython_debug/
 *.xlsx
 *.bkp
 *.dtmp
+data/.~lock.WiF CE Counter List.xlsx#
